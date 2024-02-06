@@ -1,7 +1,7 @@
-import { defaultShouldDehydrateMutation } from "@tanstack/react-query";
+
 import { ChangeEvent } from "react";
 
-type CarResponse = {
+export type CarResponse = {
     make: string; 
     model: string; 
     color: string; 
@@ -11,8 +11,8 @@ type CarResponse = {
 }
  export type DialogFromProps = {
     car: CarResponse; 
-    handleChange:(event:ChangeEvent <HTMLInputElement>) => void
-}
+    handleChange:(event:ChangeEvent <HTMLInputElement>)=>void
+ }
 
 
 export type Car ={ 
@@ -24,4 +24,8 @@ export type Car ={
     year: number;
     price: number; 
 }
-export default CarResponse;
+
+export type CarEntry = {
+    car: Car;
+    url: string; 
+}

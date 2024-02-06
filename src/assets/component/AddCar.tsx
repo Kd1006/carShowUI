@@ -15,7 +15,7 @@ const AddCar = () => { // making empty car object
         year: 0, 
         price:0
     })
-    const[open, setOpen] = useState(true); 
+    const[open, setOpen] = useState(false); 
     const queryClient = useQueryClient();
     const{mutate} = useMutation(addCar,{
         onSuccess: () => { 
@@ -46,6 +46,7 @@ const AddCar = () => { // making empty car object
             year: 0, 
             price:0
         })
+        
     }
     
   return (
