@@ -29,3 +29,7 @@ export type CarEntry = {
     car: Car;
     url: string; 
 }
+export type User ={
+    username:string; 
+    password: string; 
+}

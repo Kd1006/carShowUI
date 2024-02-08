@@ -1,11 +1,18 @@
-import axios from "axios";
+import axios, { AxiosRequestConfig } from "axios";
 import   {CarResponse,  Car, CarEntry, } from "./src/types";
 
-
-
+const getAxiosConfig = ():AxiosRequestConfig => {
+    const token = sessionStorage.getItem('jwt')?.substring(6);
+    return {
+        headers:{
+            'Content-Type' : 'application/json',
+            'Authorization' : token
+        }
+    }
+}
 
 export const getCars = async():Promise<CarResponse[]> => { 
-    const response = await axios.get(`${import.meta.env.VITE_API_URL}/cars`)
+    const response = await axios.get(`${import.meta.env.VITE_API_URL}/cars`,getAxiosConfig)
     return response.data;
 }
 
